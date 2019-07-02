@@ -1,0 +1,40 @@
+<!-- JS Scripts -->
+<script src="{{ asset('public/assets/js/custom.js') }} "></script>
+<script src="{{ asset('public/js/app.js') }} "></script>
+<script src="{{ asset('public/assets/js/jquery.appear.js') }}"></script>
+<script src="{{ asset('public/assets/js/jquery.mousewheel.js') }}"></script>
+<script src="{{ asset('public/assets/js/perfect-scrollbar.js') }}"></script>
+<script src="{{ asset('public/assets/js/jquery.matchHeight.js') }}"></script>
+<script src="{{ asset('public/assets/js/svgxuse.js') }}"></script>
+<script src="{{ asset('public/assets/js/imagesloaded.pkgd.js') }}"></script>
+<script src="{{ asset('public/assets/js/Headroom.js') }}"></script>
+<script src="{{ asset('public/assets/js/velocity.js') }}"></script>
+<script src="{{ asset('public/assets/js/ScrollMagic.js') }}"></script>
+<script src="{{ asset('public/assets/js/jquery.waypoints.js') }}"></script>
+<script src="{{ asset('public/assets/js/jquery.countTo.js') }}"></script>
+<script src="{{ asset('public/assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('public/assets/js/material.min.js') }}"></script>
+<script src="{{ asset('public/assets/js/bootstrap-select.js') }}"></script>
+<script src="{{ asset('public/assets/js/smooth-scroll.js') }}"></script>
+<script src="{{ asset('public/assets/js/selectize.js') }}"></script>
+<script src="{{ asset('public/assets/js/swiper.jquery.js') }}"></script>
+<script src="{{ asset('public/assets/js/moment.js') }}"></script>
+<script src="{{ asset('public/assets/js/daterangepicker.js') }}"></script>
+<script src="{{ asset('public/assets/js/simplecalendar.js') }}"></script>
+<script src="{{ asset('public/assets/js/fullcalendar.js') }}"></script>
+<script src="{{ asset('public/assets/js/isotope.pkgd.js') }}"></script>
+<script src="{{ asset('public/assets/js/ajax-pagination.js') }}"></script>
+<script src="{{ asset('public/assets/js/Chart.js') }}"></script>
+<script src="{{ asset('public/assets/js/chartjs-plugin-deferred.js') }}"></script>
+<script src="{{ asset('public/assets/js/circle-progress.js') }}"></script>
+<script src="{{ asset('public/assets/js/loader.js') }}"></script>
+<script src="{{ asset('public/assets/js/run-chart.js') }}"></script>
+<script src="{{ asset('public/assets/js/jquery.magnific-popup.js') }}"></script>
+<script src="{{ asset('public/assets/js/jquery.gifplayer.js') }}"></script>
+<script src="{{ asset('public/assets/js/mediaelement-and-player.js') }}"></script>
+<script src="{{ asset('public/assets/js/mediaelement-playlist-plugin.min.js') }}"></script>
+
+<script src="{{ asset('public/assets/js/base-init.js') }}"></script>
+<script defer src="fonts/fontawesome-all.js"></script>
+
+<script src="{{ asset('public/assets/Bootstrap/dist/js/bootstrap.bundle.js') }}"></script>

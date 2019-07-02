@@ -1,0 +1,12 @@
+#comment-form {
+    display: none;
+}
+
+.comments-list {
+    margin-top: 5px;
+}
+
+.replies-list {
+    margin-left: 30px;
+    margin-top: 5px;
+}
