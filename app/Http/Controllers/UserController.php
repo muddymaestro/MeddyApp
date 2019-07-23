@@ -20,12 +20,12 @@ class UserController extends Controller
             // sending a notification
             //$user->notify(new UserFollowed($follower));
 
-            return back()->withSuccess("You are now friends with {$user->name}");
+            return response()->json(['message' => 'you are now friends']);
         }
 
         Session::flash('success', 'You are already following this user');
 
-        return redirect()->back();
+        return response()->json(['message' => 'you are already following this']);
     }
 
     public function unfollow(User $user, $id)
@@ -36,12 +36,12 @@ class UserController extends Controller
 
             $follower->unfollow($id);
 
-            return back()->withSuccess("You are no longer friends with {$user->name}");
+            return response()->json(['message' => 'you are no longer friends']);
         }
 
         Session::flash('success', 'You are not following this user');
 
-        return redirect()->back();
+        return response()->json(['message' => 'you are not following this user']);
     }
 
     public function notifications()

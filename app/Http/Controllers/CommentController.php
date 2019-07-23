@@ -26,19 +26,19 @@ class CommentController extends Controller
         
         Session::flash('success', 'Comment has been posted successfully');
 
-        return response()->json(['comment' => $comment]);
+        return response()->json(['comment' => $comment, 'username' => $comment->user->name]);
     }
 
     public function reply(Request $request, $comment_id)
     {
-        $request->validate(['reply' => 'required']);
+        $request->validate(['data.reply' => 'required']);
 
         $comment = Comment::find($comment_id);
-        $comment->addComment($request->reply);
+        $reply = $comment->addComment($request->input('data.reply'));
 
         Session::flash('success', 'Reply has been posted successfully');
 
-        return redirect()->back();
+        return response()->json(['reply' => $reply, 'username' => $reply->user->name]);
     }
 
     /**

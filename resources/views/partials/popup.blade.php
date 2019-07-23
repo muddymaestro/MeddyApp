@@ -6,35 +6,38 @@
 				<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 			</a>
 
-			<div class="modal-header">
-				<h6 class="title">Reply to {{ $comment->user->name }}</h6>
-			</div>
+			
+				<div class="modal-header">
+					<h6 class="title">Reply to</h6>
+					{{-- Reply to {{ $comment->user->name }} --}}
+				</div>
 
-			<div class="modal-body">
-				<form action="{{route('comment.reply', $comment->id)}}" method="POST" class="comment-form inline-items">
-					@csrf
-					
-						<div class="post__author author vcard inline-items">
-							<img src="{{ asset('public/img/author-page.jpg') }}" alt="author">
-					
-							<div class="form-group with-icon-right ">
-								<textarea class="form-control" name="reply"></textarea>
-								<div class="add-options-message">
-									<a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
-										<svg class="olymp-camera-icon">
-											<use xlink:href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
-										</svg>
-									</a>
+				<div class="modal-body">
+					<form action="" method="POST" class="comment-form inline-items" >
+						@csrf
+						 {{-- action = {{route('comment.reply', $comment->id)}} --}}
+							<div class="post__author author vcard inline-items">
+								<img src="{{ asset('public/img/author-page.jpg') }}" alt="author">
+						
+								<div class="form-group with-icon-right ">
+									<textarea class="form-control" name="reply"></textarea>
+									<div class="add-options-message">
+										<a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
+											<svg class="olymp-camera-icon">
+												<use xlink:href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
+											</svg>
+										</a>
+									</div>
 								</div>
 							</div>
-						</div>
-					
-						<button class="btn btn-md-2 btn-primary">Post Comment</button>
-					
-						<button class="btn btn-md-2 btn-border-think c-grey btn-transparent custom-color">Cancel</button>
+						
+							<button class="btn btn-md-2 btn-primary" id="replyPost">Post Comment</button>
+						
+							<button class="btn btn-md-2 btn-border-think c-grey btn-transparent custom-color">Cancel</button>
+				
+					</form>
+				</div>
 			
-				</form>
-			</div>
 		</div>
 	</div>
 </div>

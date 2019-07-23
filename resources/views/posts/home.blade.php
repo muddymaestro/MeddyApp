@@ -722,12 +722,12 @@
 
                                <!-- Comments -->
                                
-                            @foreach ($post->comments as $comment)
                                 <ul class="comments-list">
+                                    @foreach ($post->comments as $comment)
                                     <li class="comment-item">
                                         <div class="post__author author vcard inline-items">
                                             <img src="{{asset('public/img/author-page.jpg')}}" alt="author">
-                                
+                                           
                                             <div class="author-date">
                                             <a class="h6 post__author-name fn" href="02-ProfilePage.html">{{ $comment->user->name }}</a>
                                                 <div class="post__date">
@@ -741,24 +741,25 @@
                                 
                                         </div>
                                 
-                                        <p class="comment">{{ $comment->body }} ({{$loop->iteration}} / {{$loop->count}} / {{$loop->remaining}})</p>
+                                        <p class="comment-body">{{ $comment->body }}</p>
                                 
                                         <a href="#" class="post-add-icon inline-items">
                                             <svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
                                             <span>3</span>
                                         </a>
-                                        <a href="#" data-target="#reply-to-a-comment" data-toggle="modal" class="reply">Reply</a>
+                                        <a href="#" data-target="#reply-to-a-comment" data-toggle="modal" id="reply">Reply</a>
                                     </li>
 
                                                     <!-- Replies -->
-                                                    @foreach ($comment->comments as $comment) 
-                                                        <ul class="replies-list">
-                                                            <li class="comment-item">
+                                                     
+                                                        <ul class="replies-list" id="{{ $comment->id }}">
+                                                            @foreach ($comment->comments as $reply)
+                                                            <li class="reply-item">
                                                                 <div class="post__author author vcard inline-items">
                                                                     <img src="{{asset('public/img/author-page.jpg')}}" alt="author">
                                                         
                                                                     <div class="author-date">
-                                                                    <a class="h6 post__author-name fn" href="02-ProfilePage.html">{{ $comment->user->name }}</a>
+                                                                    <a class="h6 post__author-name fn" href="02-ProfilePage.html">{{ $reply->user->name }}</a>
                                                                         <div class="post__date">
                                                                             <time class="published" datetime="2004-07-24T18:18">
                                                                                 38 mins ago
@@ -770,13 +771,13 @@
                                                         
                                                                 </div>
                                                         
-                                                                <p>{{ $comment->body }} ({{$loop->iteration}} / {{$loop->count}} / {{$loop->remaining}})</p>
+                                                                <p>{{ $reply->body }}</p>
                                                         
                                                                 <a href="#" class="post-add-icon inline-items">
                                                                     <svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
                                                                     <span>3</span>
                                                                 </a>
-                                                                <a href="#" class="reply">Reply</a>
+                                                                <a href="#" class="">Reply</a>
                                                             </li>
                                                         </ul>
                                             
@@ -940,9 +941,9 @@
                                 </div>
                                 <span class="notification-icon">
                                     @if(Auth::user()->isFollowing($user->id))
-                                        <a href="{{ route('unfollow', $user->id) }}" class="btn btn-xs btn-primary">Unfollow</a>
+                                        <a href="{{ $user->id }}" class="btn btn-xs btn-primary" id="unfollow">Unfollow</a>
                                     @else
-                                        <a href="{{ route('follow', $user->id) }}" class="btn btn-xs btn-primary">Follow</a>
+                                        <a href="{{ $user->id }}" class="btn btn-xs btn-primary" id="follow">Follow</a>
                                     @endif
                                 </span>
                             </li>
