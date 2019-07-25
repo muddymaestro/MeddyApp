@@ -248,43 +248,93 @@
 					<div class="mCustomScrollbar" data-mcs-theme="dark">
 						<ul class="notification-list">
 							@foreach (Auth::user()->notifications as $notification)
-							    <li>
-									<div class="author-thumb">
-										<img src="{{asset('public/img/avatar62-sm.jpg')}}" alt="author">
-									</div>
-									<div class="notification-event">
-										<div><a href="#" class="h6 notification-friend">Mathilda Brinker</a> commented on your new <a href="#" class="notification-link">profile status</a>.</div>
-										<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
-									</div>
-										<span class="notification-icon">
-											<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
-										</span>
-	
-									<div class="more">
-										<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-										<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
-									</div>
-								</li>
+
+								@if(Auth::user()->id !== $notification->data['user']['id'])
+
+								    @if($notification->type == 'App\Notifications\Likes')
+										<li>
+											<div class="author-thumb">
+												<img src="{{asset('public/img/avatar62-sm.jpg')}}" alt="author">
+											</div>
+											<div class="notification-event">
+											<div><a href="#" class="h6 notification-friend">{{$notification->data['user']['name']}}</a> liked your <a href="#" class="notification-link">post</a>.</div>
+												<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
+											</div>
+												<span class="notification-icon">
+													<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+												</span>
+			
+											<div class="more">
+												<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+												<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+											</div>
+										</li>
+
+									@elseif($notification->type == 'App\Notifications\Comments') 
+										<li>
+											<div class="author-thumb">
+												<img src="{{asset('public/img/avatar62-sm.jpg')}}" alt="author">
+											</div>
+											<div class="notification-event">
+											<div><a href="#" class="h6 notification-friend">{{$notification->data['user']['name']}}</a> commented on your <a href="#" class="notification-link">post</a>.</div>
+												<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
+											</div>
+												<span class="notification-icon">
+													<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+												</span>
+			
+											<div class="more">
+												<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+												<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+											</div>
+										</li>
+									@endif
+								@endif
 							@endforeach
 
 							@foreach (Auth::user()->unreadNotifications as $notification)
-							    <li class="un-read" id="unread">
-									<div class="author-thumb">
-										<img src="{{asset('public/img/avatar63-sm.jpg')}}" alt="author">
-									</div>
-									<div class="notification-event">
-										<div>You and <a href="#" class="h6 notification-friend">Nicholas Grissom</a> just became friends. Write on <a href="#" class="notification-link">his wall</a>.</div>
-										<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">9 hours ago</time></span>
-									</div>
-										<span class="notification-icon">
-											<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
-										</span>
-	
-									<div class="more">
-										<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-										<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
-									</div>
-								</li>
+
+								@if(Auth::user()->id !== $notification->data['user']['id'])
+
+										@if($notification->type == 'App\Notifications\Likes')
+											<li class="un-read" id="unread">
+												<div class="author-thumb">
+													<img src="{{asset('public/img/avatar62-sm.jpg')}}" alt="author">
+												</div>
+												<div class="notification-event">
+												<div><a href="#" class="h6 notification-friend">{{$notification->data['user']['name']}}</a> liked your <a href="#" class="notification-link">post</a>.</div>
+													<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
+												</div>
+													<span class="notification-icon">
+														<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+													</span>
+				
+												<div class="more">
+													<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+													<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+												</div>
+											</li>
+
+										@elseif($notification->type == 'App\Notifications\Comments') 
+											<li class="un-read" id="unread">
+												<div class="author-thumb">
+													<img src="{{asset('public/img/avatar62-sm.jpg')}}" alt="author">
+												</div>
+												<div class="notification-event">
+												<div><a href="#" class="h6 notification-friend">{{$notification->data['user']['name']}}</a> commented on your <a href="#" class="notification-link">post</a>.</div>
+													<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
+												</div>
+													<span class="notification-icon">
+														<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+													</span>
+				
+												<div class="more">
+													<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+													<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+												</div>
+											</li>
+										@endif
+								@endif
 							@endforeach
 
 							<li class="with-comment-photo">

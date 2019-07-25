@@ -7,6 +7,7 @@ use App\Post;
 use App\Comment;
 use Session;
 use Illuminate\Http\Request;
+use App\Notifications\Comments;
 
 class CommentController extends Controller
 {
@@ -23,6 +24,11 @@ class CommentController extends Controller
 
         $post = Post::find($post_id);
         $comment = $post->addComment($request->input('data.comment'));
+
+        if(Auth::user()->id !== $post->user->id)
+        {
+            $post->user->notify(new Comments($comment));
+        }
         
         Session::flash('success', 'Comment has been posted successfully');
 

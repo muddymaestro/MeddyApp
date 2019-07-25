@@ -18,7 +18,11 @@ class LikeController extends Controller
         $post->like();
 
         Session::flash('success', 'You liked this post');
-        $post->user->notify(new Likes($post));
+
+        if(Auth::user()->id !== $post->user->id)
+        {
+            $post->user->notify(new Likes($post));
+        }
 
         return response()->json(['post_like' => $post->likes]);
     }
