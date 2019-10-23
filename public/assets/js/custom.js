@@ -42,6 +42,19 @@ document.addEventListener('click', event => {
                 fetchPosts().then(response => {
                 
                 document.querySelector('.px-5').innerHTML = response.html;
+
+                const activityFeed = document.getElementById('widget');
+                const newFeed = document.createElement('LI');
+                const feedItem = `<div class="author-thumb">
+                                        <img src="{{asset('img/avatar52-sm.jpg')}}" alt="author">
+                                    </div>
+                                    <div class="notification-event">
+                                        <a href="#" class="h6 notification-friend">Mohamed Mdoe ${response.feeds[0].type} </a> posted a <a href="#" class="notification-link">status update</a>.
+                                        <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">1 hour ago</time></span>
+                                    </div>
+                                `;
+                newFeed.innerHTML = feedItem;
+                activityFeed.insertBefore(newFeed, activityFeed.children[0]);
             });
             /* const parent = document.getElementById('newsfeed-items-grid');
             parent.insertAdjacentHTML('afterbegin', newElement); */
@@ -116,7 +129,7 @@ document.addEventListener('click', event => {
                     newList.className = 'reply-item';
                     const replyItem =    `
                                                 <div class="post__author author vcard inline-items">
-                                                    <img src="{{asset('public/img/author-page.jpg')}}" alt="author">
+                                                    <img src="{{asset('img/author-page.jpg')}}" alt="author">
                                                 
                                                     <div class="author-date">
                                                     <a class="h6 post__author-name fn" href="02-ProfilePage.html"> ${response.username} </a>
@@ -290,7 +303,7 @@ async function replyPost(url, replyData)
 async function fetchPosts()
 {
     try {
-        const response = await axios.get('http://localhost/medyApp/posts');
+        const response = await axios.get('http://localhost:8000/posts');
         return response.data;
     
     } catch(error) {
@@ -302,7 +315,7 @@ async function fetchPosts()
 async function fetchComments()
 {
     try {
-        const response = await axios.get('http://localhost/medyApp/comments');
+        const response = await axios.get('http://localhost:8000/comments');
         return response.data;
     
     } catch(error) {
@@ -314,7 +327,7 @@ async function fetchComments()
 async function follow(user_id)
 {
     try {
-        const response = await axios.get(`http://localhost/medyApp/follow/${user_id}`);
+        const response = await axios.get(`http://localhost:8000/follow/${user_id}`);
         if(response) {
             return true;
         }
@@ -328,7 +341,7 @@ async function follow(user_id)
 async function unFollow(user_id)
 {
     try {
-        const response = await axios.get(`http://localhost/medyApp/unfollow/${user_id}`);
+        const response = await axios.get(`http://localhost:8000/unfollow/${user_id}`);
         if(response) {
             return true;
         }
@@ -342,7 +355,7 @@ async function unFollow(user_id)
 async function likePost(post_id)
 {
     try {
-        const response = await axios.get(`http://localhost/medyApp/like_post/${post_id}`);
+        const response = await axios.get(`http://localhost:8000/like_post/${post_id}`);
         return response.data;
     
     } catch(error) {
@@ -354,7 +367,7 @@ async function likePost(post_id)
 async function unlikePost(post_id)
 {
     try {
-        const response = await axios.get(`http://localhost/medyApp/unlike_post/${post_id}`);
+        const response = await axios.get(`http://localhost:8000/unlike_post/${post_id}`);
         return response.data;
     
     } catch(error) {
@@ -366,7 +379,7 @@ async function unlikePost(post_id)
 async function getLikesCount(post_id)
 {
     try {
-        const response = await axios.get(`http://localhost/medyApp/post-likes-count/${post_id}`);
+        const response = await axios.get(`http://localhost:8000/post-likes-count/${post_id}`);
         return response.data;
     }
     catch(error) {
@@ -378,7 +391,7 @@ async function getLikesCount(post_id)
 async function markNotificationAsRead()
 {
     try {
-        const response = await axios.get('http://localhost/medyApp/markAsRead');
+        const response = await axios.get('http://localhost:8000/markAsRead');
         response.data;
     }
     catch(error) {

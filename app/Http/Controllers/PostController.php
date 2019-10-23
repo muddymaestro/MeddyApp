@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\Like;
 use App\User;
+use App\ActivityFeed;
 use Auth;
 use Session;
 use Illuminate\Http\Request;
@@ -33,7 +34,6 @@ class PostController extends Controller
         $post->save();
 
         return response()->json(['post' => $post]);
-
     }
 
     /**
@@ -47,7 +47,11 @@ class PostController extends Controller
         $posts = Post::latest()->get();
         $users = User::where('id', '!=', auth()->user()->id)->get();
 
-        return response()->json(['html' => view('posts.home', compact(['posts', 'users']))->render()]);
+        $feeds = ActivityFeed::where('user_id', '=', auth()->id())
+                                ->where('type', '=', 'created_post')
+                                ->get();
+
+        return response()->json(['html' => view('posts.home', compact(['posts', 'users', ]))->render(), 'feeds' => $feeds]);
     }
 
     /**

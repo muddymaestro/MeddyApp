@@ -22,11 +22,11 @@
 </script>
 
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/Bootstrap/dist/css/bootstrap-reboot.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/Bootstrap/dist/css/bootstrap.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/Bootstrap/dist/css/bootstrap-grid.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/Bootstrap/dist/css/bootstrap-reboot.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/Bootstrap/dist/css/bootstrap.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/Bootstrap/dist/css/bootstrap-grid.css') }}">
 
 <!-- Main Styles CSS -->
-<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/main.min.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/fonts.min.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/custom.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/fonts.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom.css') }}">

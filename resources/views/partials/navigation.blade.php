@@ -36,7 +36,7 @@
 						<ul class="notification-list friend-requests">
 							<li>
 								<div class="author-thumb">
-									<img src="{{asset('public/img/avatar55-sm.jpg')}}" alt="author">
+									<img src="{{asset('img/avatar55-sm.jpg')}}" alt="author">
 								</div>
 								<div class="notification-event">
 									<a href="#" class="h6 notification-friend">Tamara Romanoff</a>
@@ -64,7 +64,7 @@
 
 							<li>
 								<div class="author-thumb">
-									<img src="{{asset('public/img/avatar56-sm.jpg')}}" alt="author">
+									<img src="{{asset('img/avatar56-sm.jpg')}}" alt="author">
 								</div>
 								<div class="notification-event">
 									<a href="#" class="h6 notification-friend">Tony Stevens</a>
@@ -86,13 +86,13 @@
 								</span>
 
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="{{asset('public/svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg>
 								</div>
 							</li>
 
 							<li class="accepted">
 								<div class="author-thumb">
-									<img src="{{asset('public/img/avatar57-sm.jpg')}}" alt="author">
+									<img src="{{asset('img/avatar57-sm.jpg')}}" alt="author">
 								</div>
 								<div class="notification-event">
 									You and <a href="#" class="h6 notification-friend">Mary Jane Stark</a> just became friends. Write on <a href="#" class="notification-link">her wall</a>.
@@ -109,7 +109,7 @@
 
 							<li>
 								<div class="author-thumb">
-									<img src={{asset('public/img/avatar58-sm.jpg')}}" alt="author">
+									<img src={{asset('img/avatar58-sm.jpg')}}" alt="author">
 								</div>
 								<div class="notification-event">
 									<a href="#" class="h6 notification-friend">Stagg Clothing</a>
@@ -157,7 +157,7 @@
 						<ul class="notification-list chat-message">
 							<li class="message-unread">
 								<div class="author-thumb">
-									<img src="{{asset('public/img/avatar59-sm.jpg')}}" alt="author">
+									<img src="{{asset('img/avatar59-sm.jpg')}}" alt="author">
 								</div>
 								<div class="notification-event">
 									<a href="#" class="h6 notification-friend">Diana Jameson</a>
@@ -174,7 +174,7 @@
 
 							<li>
 								<div class="author-thumb">
-									<img src="{{asset('public/img/avatar60-sm.jpg')}}" alt="author">
+									<img src="{{asset('img/avatar60-sm.jpg')}}" alt="author">
 								</div>
 								<div class="notification-event">
 									<a href="#" class="h6 notification-friend">Jake Parker</a>
@@ -191,7 +191,7 @@
 							</li>
 							<li>
 								<div class="author-thumb">
-									<img src="{{asset('public/img/avatar61-sm.jpg')}}" alt="author">
+									<img src="{{asset('img/avatar61-sm.jpg')}}" alt="author">
 								</div>
 								<div class="notification-event">
 									<a href="#" class="h6 notification-friend">Elaine Dreyfuss</a>
@@ -208,10 +208,10 @@
 
 							<li class="chat-group">
 								<div class="author-thumb">
-									<img src="{{asset('public/img/avatar11-sm.jpg')}}" alt="author">
-									<img src="{{asset('public/img/avatar12-sm.jpg')}}" alt="author">
-									<img src="{{asset('public/img/avatar13-sm.jpg')}}" alt="author">
-									<img src="{{asset('public/img/avatar10-sm.jpg')}}" alt="author">
+									<img src="{{asset('img/avatar11-sm.jpg')}}" alt="author">
+									<img src="{{asset('img/avatar12-sm.jpg')}}" alt="author">
+									<img src="{{asset('img/avatar13-sm.jpg')}}" alt="author">
+									<img src="{{asset('img/avatar10-sm.jpg')}}" alt="author">
 								</div>
 								<div class="notification-event">
 									<a href="#" class="h6 notification-friend">You, Faye, Ed &amp; Jet +3</a>
@@ -229,7 +229,7 @@
 						</ul>
 					</div>
 
-					<a href="#" class="view-all bg-purple">View All Messages</a>
+					<a href="{{route('message.index')}}" class="view-all bg-purple">View All Messages</a>
 				</div>
 			</div>
 
@@ -254,7 +254,7 @@
 								    @if($notification->type == 'App\Notifications\Likes')
 										<li>
 											<div class="author-thumb">
-												<img src="{{asset('public/img/avatar62-sm.jpg')}}" alt="author">
+												<img src="{{asset('img/avatar62-sm.jpg')}}" alt="author">
 											</div>
 											<div class="notification-event">
 											<div><a href="#" class="h6 notification-friend">{{$notification->data['user']['name']}}</a> liked your <a href="#" class="notification-link">post</a>.</div>
@@ -273,7 +273,7 @@
 									@elseif($notification->type == 'App\Notifications\Comments') 
 										<li>
 											<div class="author-thumb">
-												<img src="{{asset('public/img/avatar62-sm.jpg')}}" alt="author">
+												<img src="{{asset('img/avatar62-sm.jpg')}}" alt="author">
 											</div>
 											<div class="notification-event">
 											<div><a href="#" class="h6 notification-friend">{{$notification->data['user']['name']}}</a> commented on your <a href="#" class="notification-link">post</a>.</div>
@@ -299,7 +299,7 @@
 										@if($notification->type == 'App\Notifications\Likes')
 											<li class="un-read" id="unread">
 												<div class="author-thumb">
-													<img src="{{asset('public/img/avatar62-sm.jpg')}}" alt="author">
+													<img src="{{asset('img/avatar62-sm.jpg')}}" alt="author">
 												</div>
 												<div class="notification-event">
 												<div><a href="#" class="h6 notification-friend">{{$notification->data['user']['name']}}</a> liked your <a href="#" class="notification-link">post</a>.</div>
@@ -318,7 +318,7 @@
 										@elseif($notification->type == 'App\Notifications\Comments') 
 											<li class="un-read" id="unread">
 												<div class="author-thumb">
-													<img src="{{asset('public/img/avatar62-sm.jpg')}}" alt="author">
+													<img src="{{asset('img/avatar62-sm.jpg')}}" alt="author">
 												</div>
 												<div class="notification-event">
 												<div><a href="#" class="h6 notification-friend">{{$notification->data['user']['name']}}</a> commented on your <a href="#" class="notification-link">post</a>.</div>
@@ -339,7 +339,7 @@
 
 							<li class="with-comment-photo">
 								<div class="author-thumb">
-									<img src="{{asset('public/img/avatar64-sm.jpg')}}" alt="author">
+									<img src="{{asset('img/avatar64-sm.jpg')}}" alt="author">
 								</div>
 								<div class="notification-event">
 									<div><a href="#" class="h6 notification-friend">Sarah Hetfield</a> commented on your <a href="#" class="notification-link">photo</a>.</div>
@@ -350,7 +350,7 @@
 									</span>
 
 								<div class="comment-photo">
-									<img src="{{asset('public/img/comment-photo1.jpg')}}" alt="photo">
+									<img src="{{asset('img/comment-photo1.jpg')}}" alt="photo">
 									<span>“She looks incredible in that outfit! We should see each...”</span>
 								</div>
 
@@ -368,7 +368,7 @@
 
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
-					<img alt="author" src={{asset('public/img/author-page.jpg')}}" class="avatar">
+					<img alt="author" src={{asset('img/author-page.jpg')}}" class="avatar">
 					<span class="icon-status online"></span>
 					<div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar" data-mcs-theme="dark">
@@ -547,7 +547,7 @@
 				<ul class="notification-list friend-requests">
 					<li>
 						<div class="author-thumb">
-							<img src="{{asset('public/img/avatar55-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar55-sm.jpg')}}" alt="author">
 						</div>
 						<div class="notification-event">
 							<a href="#" class="h6 notification-friend">Tamara Romanoff</a>
@@ -574,7 +574,7 @@
 					</li>
 					<li>
 						<div class="author-thumb">
-							<img src="{{asset('public/img/avatar56-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar56-sm.jpg')}}" alt="author">
 						</div>
 						<div class="notification-event">
 							<a href="#" class="h6 notification-friend">Tony Stevens</a>
@@ -601,7 +601,7 @@
 					</li>
 					<li class="accepted">
 						<div class="author-thumb">
-							<img src="{{asset('public/img/avatar57-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar57-sm.jpg')}}" alt="author">
 						</div>
 						<div class="notification-event">
 							You and <a href="#" class="h6 notification-friend">Mary Jane Stark</a> just became friends. Write on <a href="#" class="notification-link">her wall</a>.
@@ -617,7 +617,7 @@
 					</li>
 					<li>
 						<div class="author-thumb">
-							<img src="{{asset('public/img/avatar58-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar58-sm.jpg')}}" alt="author">
 						</div>
 						<div class="notification-event">
 							<a href="#" class="h6 notification-friend">Stagg Clothing</a>
@@ -660,7 +660,7 @@
 				<ul class="notification-list chat-message">
 					<li class="message-unread">
 						<div class="author-thumb">
-							<img src="{{asset('public/img/avatar59-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar59-sm.jpg')}}" alt="author">
 						</div>
 						<div class="notification-event">
 							<a href="#" class="h6 notification-friend">Diana Jameson</a>
@@ -677,7 +677,7 @@
 
 					<li>
 						<div class="author-thumb">
-							<img src="{{asset('public/img/avatar60-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar60-sm.jpg')}}" alt="author">
 						</div>
 						<div class="notification-event">
 							<a href="#" class="h6 notification-friend">Jake Parker</a>
@@ -694,7 +694,7 @@
 					</li>
 					<li>
 						<div class="author-thumb">
-							<img src="{{asset('public/img/avatar61-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar61-sm.jpg')}}" alt="author">
 						</div>
 						<div class="notification-event">
 							<a href="#" class="h6 notification-friend">Elaine Dreyfuss</a>
@@ -711,10 +711,10 @@
 
 					<li class="chat-group">
 						<div class="author-thumb">
-							<img src="{{asset('public/img/avatar11-sm.jpg')}}" alt="author">
-							<img src="{{asset('public/img/avatar12-sm.jpg')}}" alt="author">
-							<img src="{{asset('public/img/avatar13-sm.jpg')}}" alt="author">
-							<img src="{{asset('public/img/avatar10-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar11-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar12-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar13-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar10-sm.jpg')}}" alt="author">
 						</div>
 						<div class="notification-event">
 							<a href="#" class="h6 notification-friend">You, Faye, Ed &amp; Jet +3</a>
@@ -748,7 +748,7 @@
 				<ul class="notification-list">
 					<li>
 						<div class="author-thumb">
-							<img src="{{asset('public/img/avatar62-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar62-sm.jpg')}}" alt="author">
 						</div>
 						<div class="notification-event">
 							<div><a href="#" class="h6 notification-friend">Mathilda Brinker</a> commented on your new <a href="#" class="notification-link">profile status</a>.</div>
@@ -766,7 +766,7 @@
 
 					<li class="un-read">
 						<div class="author-thumb">
-							<img src="{{asset('public/img/avatar63-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar63-sm.jpg')}}" alt="author">
 						</div>
 						<div class="notification-event">
 							<div>You and <a href="#" class="h6 notification-friend">Nicholas Grissom</a> just became friends. Write on <a href="#" class="notification-link">his wall</a>.</div>
@@ -784,7 +784,7 @@
 
 					<li class="with-comment-photo">
 						<div class="author-thumb">
-							<img src="{{asset('public/img/avatar64-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar64-sm.jpg')}}" alt="author">
 						</div>
 						<div class="notification-event">
 							<div><a href="#" class="h6 notification-friend">Sarah Hetfield</a> commented on your <a href="#" class="notification-link">photo</a>.</div>
@@ -795,7 +795,7 @@
 										</span>
 
 						<div class="comment-photo">
-							<img src="{{asset('public/img/comment-photo1.jpg')}}" alt="photo">
+							<img src="{{asset('img/comment-photo1.jpg')}}" alt="photo">
 							<span>“She looks incredible in that outfit! We should see each...”</span>
 						</div>
 
@@ -807,7 +807,7 @@
 
 					<li>
 						<div class="author-thumb">
-							<img src="{{asset('public/img/avatar65-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar65-sm.jpg')}}" alt="author">
 						</div>
 						<div class="notification-event">
 							<div><a href="#" class="h6 notification-friend">Green Goo Rock</a> invited you to attend to his event Goo in <a href="#" class="notification-link">Gotham Bar</a>.</div>
@@ -825,7 +825,7 @@
 
 					<li>
 						<div class="author-thumb">
-							<img src="{{asset('public/img/avatar66-sm.jpg')}}" alt="author">
+							<img src="{{asset('img/avatar66-sm.jpg')}}" alt="author">
 						</div>
 						<div class="notification-event">
 							<div><a href="#" class="h6 notification-friend">James Summers</a> commented on your new <a href="#" class="notification-link">profile status</a>.</div>

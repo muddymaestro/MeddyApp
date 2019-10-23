@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Post;
+use App\ActivityFeed;
 
 class HomeController extends Controller
 {
@@ -27,7 +28,8 @@ class HomeController extends Controller
     {
         $users = User::where('id', '!=', auth()->user()->id)->get();
         $posts = Post::latest()->get();
+        $feeds = ActivityFeed::latest()->get();
 
-        return view('posts.home', compact(['users', 'posts']));
+        return view('posts.home', compact(['users', 'posts', 'feeds']));
     }
 }

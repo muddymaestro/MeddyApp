@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    use commentableTrait;
-    use likeableTrait;
+    use commentableTrait, likeableTrait, recordFeedsTrait;
     
     public function user()
     {

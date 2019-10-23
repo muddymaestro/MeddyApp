@@ -69,5 +69,10 @@ class User extends Authenticatable
     {
         return (boolean) $this->follows()->where('follows_id', $userId)->first();
     }
+
+    public function feeds()
+    {
+        return $this->hasMany(ActivityFeed::class);
+    }
     
 }

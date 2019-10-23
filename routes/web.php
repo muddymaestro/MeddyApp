@@ -40,3 +40,6 @@ Route::get('/post-likes-count/{post_id}', 'PostController@postLikesCount')->name
 Route::get('/markAsRead', function(){
     Auth::user()->unreadNotifications->markAsRead();
 });
+
+Route::get('/messages', 'MessagesController@index')->name('message.index');
+Route::post('/message/{message_to}', 'MessagesController@store')->name('message.create');

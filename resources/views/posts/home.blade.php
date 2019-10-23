@@ -50,7 +50,7 @@
                                         @csrf
 
                                     <div class="author-thumb">
-                                    <img src="{{asset('public/img/author-page.jpg')}}" alt="author">
+                                    <img src="{{asset('img/author-page.jpg')}}" alt="author">
                                     </div>
                                     <div class="form-group with-icon label-floating is-empty">
                                         <label class="control-label">Share what you are thinking here...</label>
@@ -149,7 +149,7 @@
                         <article class="hentry post video">
                         
                             <div class="post__author author vcard inline-items">
-                                <img src="{{asset('public/img/avatar7-sm.jpg')}}" alt="author">
+                                <img src="{{asset('img/avatar7-sm.jpg')}}" alt="author">
                         
                                 <div class="author-date">
                                     <a class="h6 post__author-name fn" href="#">Marina Valentine</a> shared a <a href="#">link</a>
@@ -183,7 +183,7 @@
                         
                             <div class="post-video">
                                 <div class="video-thumb">
-                                    <img src="{{asset('public/img/video-youtube1.jpg')}}" alt="photo">
+                                    <img src="{{asset('img/video-youtube1.jpg')}}" alt="photo">
                                     <a href="https://youtube.com/watch?v=excVFQ2TWig" class="play-video">
                                         <svg class="olymp-play-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-play-icon"></use></svg>
                                     </a>
@@ -208,27 +208,27 @@
                                 <ul class="friends-harmonic">
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic9.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic9.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic10.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic10.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic7.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic7.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic8.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic8.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic11.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic11.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                 </ul>
@@ -281,7 +281,7 @@
                         <article class="hentry post">
                         
                             <div class="post__author author vcard inline-items">
-                                <img src="{{asset('public/img/avatar10-sm.jpg')}}" alt="author">
+                                <img src="{{asset('img/avatar10-sm.jpg')}}" alt="author">
                         
                                 <div class="author-date">
                                     <a class="h6 post__author-name fn" href="#">Elaine Dreyfuss</a>
@@ -325,27 +325,27 @@
                                 <ul class="friends-harmonic">
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic7.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic7.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic8.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic8.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic9.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic9.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic10.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic10.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic11.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic11.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                 </ul>
@@ -394,7 +394,7 @@
                         <ul class="comments-list">
                             <li class="comment-item">
                                 <div class="post__author author vcard inline-items">
-                                    <img src="{{asset('public/img/author-page.jpg')}}" alt="author">
+                                    <img src="{{asset('img/author-page.jpg')}}" alt="author">
                         
                                     <div class="author-date">
                                         <a class="h6 post__author-name fn" href="02-ProfilePage.html">James Spiegel</a>
@@ -419,7 +419,7 @@
                             </li>
                             <li class="comment-item">
                                 <div class="post__author author vcard inline-items">
-                                    <img src="{{asset('public/img/avatar1-sm.jpg')}}" alt="author">
+                                    <img src="{{asset('img/avatar1-sm.jpg')}}" alt="author">
                         
                                     <div class="author-date">
                                         <a class="h6 post__author-name fn" href="#">Mathilda Brinker</a>
@@ -456,7 +456,7 @@
                         <form class="comment-form inline-items">
                         
                             <div class="post__author author vcard inline-items">
-                                <img src="{{asset('public/img/author-page.jpg')}}" alt="author">
+                                <img src="{{asset('img/author-page.jpg')}}" alt="author">
                         
                                 <div class="form-group with-icon-right ">
                                     <textarea class="form-control" placeholder=""></textarea>
@@ -484,7 +484,7 @@
                         <article class="hentry post has-post-thumbnail">
                         
                             <div class="post__author author vcard inline-items">
-                                <img src="{{asset('public/img/avatar5-sm.jpg')}}" alt="author">
+                                <img src="{{asset('img/avatar5-sm.jpg')}}" alt="author">
                         
                                 <div class="author-date">
                                     <a class="h6 post__author-name fn" href="#">Green Goo Rock</a>
@@ -519,7 +519,7 @@
                             </p>
                         
                             <div class="post-thumb">
-                                <img src="{{asset('public/img/post-thumb1.jpg')}}" alt="photo">
+                                <img src="{{asset('img/post-thumb1.jpg')}}" alt="photo">
                             </div>
                         
                             <div class="post-additional-info inline-items">
@@ -532,27 +532,27 @@
                                 <ul class="friends-harmonic">
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic9.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic9.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic10.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic10.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic7.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic7.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic8.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic8.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic11.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic11.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                 </ul>
@@ -603,7 +603,7 @@
                             <article class="hentry post has-post-thumbnail">
                             
                                 <div class="post__author author vcard inline-items">
-                                    <img src="{{asset('public/img/avatar3-sm.jpg')}}" alt="author">
+                                    <img src="{{asset('img/avatar3-sm.jpg')}}" alt="author">
                             
                                     <div class="author-date">
                                     <a class="h6 post__author-name fn" href="#">{{ $post->user->name }}</a>
@@ -682,7 +682,7 @@
                                         @csrf
                                 
                                     <div class="post__author author vcard inline-items">
-                                        <img src="{{ asset('public/img/author-page.jpg') }}" alt="author">
+                                        <img src="{{ asset('img/author-page.jpg') }}" alt="author">
                                 
                                         <div class="form-group with-icon-right ">
                                             <textarea class="form-control" name="comment"></textarea>
@@ -726,7 +726,7 @@
                                     @foreach ($post->comments as $comment)
                                     <li class="comment-item">
                                         <div class="post__author author vcard inline-items">
-                                            <img src="{{asset('public/img/author-page.jpg')}}" alt="author">
+                                            <img src="{{asset('img/author-page.jpg')}}" alt="author">
                                            
                                             <div class="author-date">
                                             <a class="h6 post__author-name fn" href="02-ProfilePage.html">{{ $comment->user->name }}</a>
@@ -756,7 +756,7 @@
                                                             @foreach ($comment->comments as $reply)
                                                             <li class="reply-item">
                                                                 <div class="post__author author vcard inline-items">
-                                                                    <img src="{{asset('public/img/author-page.jpg')}}" alt="author">
+                                                                    <img src="{{asset('img/author-page.jpg')}}" alt="author">
                                                         
                                                                     <div class="author-date">
                                                                     <a class="h6 post__author-name fn" href="02-ProfilePage.html">{{ $reply->user->name }}</a>
@@ -797,7 +797,7 @@
                         {{-- <article class="hentry post has-post-thumbnail">
                         
                             <div class="post__author author vcard inline-items">
-                                <img src="{{asset('public/img/avatar2-sm.jpg')}}" alt="author">
+                                <img src="{{asset('img/avatar2-sm.jpg')}}" alt="author">
                         
                                 <div class="author-date">
                                     <a class="h6 post__author-name fn" href="#">Nicholas Grissom</a>
@@ -843,27 +843,27 @@
                                 <ul class="friends-harmonic">
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic9.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic9.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic10.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic10.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic7.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic7.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic8.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic8.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{asset('public/img/friend-harmonic11.jpg')}}" alt="friend">
+                                            <img src="{{asset('img/friend-harmonic11.jpg')}}" alt="friend">
                                         </a>
                                     </li>
                                 </ul>
@@ -933,7 +933,7 @@
                         <ul class="widget w-friend-pages-added notification-list friend-requests">
                             <li class="inline-items">
                                 <div class="author-thumb">
-                                    <img src="{{asset('public/img/avatar38-sm.jpg')}}" alt="author">
+                                    <img src="{{asset('img/avatar38-sm.jpg')}}" alt="author">
                                 </div>
                                 <div class="notification-event">
                                     <a href="#" class="h6 notification-friend">{{ $user->name }}</a>
@@ -963,119 +963,46 @@
                     
                     <!-- W-Activity-Feed -->
                     
-                    <ul class="widget w-activity-feed notification-list">
-                        <li>
-                            <div class="author-thumb">
-                                <img src="{{asset('public/img/avatar49-sm.jpg')}}" alt="author">
-                            </div>
-                            <div class="notification-event">
-                                <a href="#" class="h6 notification-friend">Marina Polson</a> commented on Jason Mark’s <a href="#" class="notification-link">photo.</a>.
-                                <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">2 mins ago</time></span>
-                            </div>
-                        </li>
-                    
-                        <li>
-                            <div class="author-thumb">
-                                <img src="{{asset('public/img/avatar9-sm.jpg')}}" alt="author">
-                            </div>
-                            <div class="notification-event">
-                                <a href="#" class="h6 notification-friend">Jake Parker </a> liked Nicholas Grissom’s <a href="#" class="notification-link">status update.</a>.
-                                <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">5 mins ago</time></span>
-                            </div>
-                        </li>
-                    
-                        <li>
-                            <div class="author-thumb">
-                                <img src="{{asset('public/img/avatar50-sm.jpg')}}" alt="author">
-                            </div>
-                            <div class="notification-event">
-                                <a href="#" class="h6 notification-friend">Mary Jane Stark </a> added 20 new photos to her <a href="#" class="notification-link">gallery album.</a>.
-                                <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">12 mins ago</time></span>
-                            </div>
-                        </li>
-                    
-                        <li>
-                            <div class="author-thumb">
-                                <img src="{{asset('public/img/avatar51-sm.jpg')}}" alt="author">
-                            </div>
-                            <div class="notification-event">
-                                <a href="#" class="h6 notification-friend">Nicholas Grissom </a> updated his profile <a href="#" class="notification-link">photo</a>.
-                                <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">1 hour ago</time></span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="author-thumb">
-                                <img src="{{asset('public/img/avatar48-sm.jpg')}}" alt="author">
-                            </div>
-                            <div class="notification-event">
-                                <a href="#" class="h6 notification-friend">Marina Valentine </a> commented on Chris Greyson’s <a href="#" class="notification-link">status update</a>.
-                                <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">1 hour ago</time></span>
-                            </div>
-                        </li>
-                    
-                        <li>
-                            <div class="author-thumb">
-                                <img src="{{asset('public/img/avatar52-sm.jpg')}}" alt="author">
-                            </div>
-                            <div class="notification-event">
-                                <a href="#" class="h6 notification-friend">Green Goo Rock </a> posted a <a href="#" class="notification-link">status update</a>.
-                                <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">1 hour ago</time></span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="author-thumb">
-                                <img src="{{asset('public/img/avatar10-sm.jpg')}}" alt="author">
-                            </div>
-                            <div class="notification-event">
-                                <a href="#" class="h6 notification-friend">Elaine Dreyfuss  </a> liked your <a href="#" class="notification-link">blog post</a>.
-                                <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">2 hours ago</time></span>
-                            </div>
-                        </li>
-                    
-                        <li>
-                            <div class="author-thumb">
-                                <img src="{{asset('public/img/avatar10-sm.jpg')}}" alt="author">
-                            </div>
-                            <div class="notification-event">
-                                <a href="#" class="h6 notification-friend">Elaine Dreyfuss  </a> commented on your <a href="#" class="notification-link">blog post</a>.
-                                <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">2 hours ago</time></span>
-                            </div>
-                        </li>
-                    
-                        <li>
-                            <div class="author-thumb">
-                                <img src="{{asset('public/img/avatar53-sm.jpg')}}" alt="author">
-                            </div>
-                            <div class="notification-event">
-                                <a href="#" class="h6 notification-friend">Bruce Peterson </a> changed his <a href="#" class="notification-link">profile picture</a>.
-                                <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">15 hours ago</time></span>
-                            </div>
-                        </li>
-                    
+                    <ul class="widget w-activity-feed notification-list" id="widget">
+                        @foreach($feeds as $feed)
+                            @if($feed->type == 'created_comment')
+                                <li>
+                                    <div class="author-thumb">
+                                        <img src="{{asset('img/avatar49-sm.jpg')}}" alt="author">
+                                    </div>
+                                    <div class="notification-event">
+                                        <a href="#" class="h6 notification-friend">Marina Polson</a> commented on Jason Mark’s <a href="#" class="notification-link">photo.</a>.
+                                        <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">2 mins ago</time></span>
+                                    </div>
+                                </li>
+
+                            @elseif($feed->type == 'created_like')
+                                <li>
+                                    <div class="author-thumb">
+                                        <img src="{{asset('img/avatar9-sm.jpg')}}" alt="author">
+                                    </div>
+                                    <div class="notification-event">
+                                        <a href="#" class="h6 notification-friend">Jake Parker </a> liked Nicholas Grissom’s <a href="#" class="notification-link">status update.</a>.
+                                        <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">5 mins ago</time></span>
+                                    </div>
+                                </li>
+
+                            @elseif($feed->type == 'created_post')
+                                <li>
+                                    <div class="author-thumb">
+                                        <img src="{{asset('img/avatar9-sm.jpg')}}" alt="author">
+                                    </div>
+                                    <div class="notification-event">
+                                        <a href="#" class="h6 notification-friend">Jake Parker </a> posted a status update <a href="#" class="notification-link">status update.</a>.
+                                        <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">5 mins ago</time></span>
+                                    </div>
+                                </li>
+                            @endif
+                        @endforeach
                     </ul>
                     
                     <!-- .. end W-Activity-Feed -->
                 </div>
-    
-    
-                <div class="ui-block">
-    
-                    
-                    <!-- W-Action -->
-                    
-                    <div class="widget w-action">
-                    
-                        <img src="{{asset('public/img/logo.png')}}" alt="Olympus">
-                        <div class="content">
-                            <h4 class="title">OLYMPUS</h4>
-                            <span>THE BEST SOCIAL NETWORK THEME IS HERE!</span>
-                            <a href="01-LandingPage.html" class="btn btn-bg-secondary btn-md">Register Now!</a>
-                        </div>
-                    </div>
-                    
-                    <!-- ... end W-Action -->
-                </div>
-    
             </aside>
     
             <!-- ... end Right Sidebar -->
