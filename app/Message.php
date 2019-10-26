@@ -18,4 +18,20 @@ class Message extends Model
     {
         return $this->hasOne(User::class, 'id', 'message_to');
     }
+
+    // Message to (user model)
+    public function messageUserTo($thread_id)
+    {
+        $thread = Thread::findOrFail($thread_id);
+
+        if( $thread->user_one == auth()->id() )
+        {
+            $user_to = User::findOrFail($thread->user_two);
+        }
+        else{
+            $user_to = User::findOrFail($thread->user_one);
+        }
+
+        return $user_to;
+    }
 }

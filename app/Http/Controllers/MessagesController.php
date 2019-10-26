@@ -30,21 +30,21 @@ class MessagesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $message_to)
+    public function store(Request $request, $receiver_id)
     {
         $request->validate([
-            'message'  =>  'required|string',
-        ]);
+            'data.message' => 'required'
+            ]);
 
         $thread = new Thread;
 
-        $newThread = $thread->makeNewThread($message_to);
+        $newThread = $thread->makeNewThread($receiver_id);
 
         $message = new Message;
 
         $message->user_id = auth()->id();
-        $message->message = $request->message;
-        $message->message_to = $message_to;
+        $message->message = $request->input('data.message');
+        $message->message_to = $receiver_id;
         $message->thread_id = $newThread->id;
 
         $message->save() ? $response = ['code'=>200] : $response = ['code'=>400];
@@ -58,7 +58,7 @@ class MessagesController extends Controller
 
         // return view('message.newMessage', compact('message'));
 
-        return redirect()->route('message.index');
+        return response()->json(['response' => $response, 'thread_id' => $newThread->id]);
     }
 
     /**
@@ -67,9 +67,22 @@ class MessagesController extends Controller
      * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function show(Message $message)
+    public function show($thread_id)
     {
-        //
+        $page = 'Inbox';
+
+        $messages = Message::where('thread_id', $thread_id)->paginate(100);
+
+        $thread = new Thread;
+
+        $threadsLastMessages = $thread->threadsLastMessages();
+
+        $message = new Message;
+
+        $message_to = $message->messageUserTo($thread_id);
+
+        return response()->json(['html' => view('messages.index', compact(['messages', 'page','message_to', 'threadsLastMessages' ]))->render()]);
+        //return view('messages.index', compact('messages', 'page','message_to', 'threadsLastMessages'));
     }
 
 

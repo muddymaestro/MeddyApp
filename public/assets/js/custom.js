@@ -245,7 +245,35 @@ document.addEventListener('click', event => {
             event.preventDefault();
             markNotificationAsRead();
             break;
-    
+
+        case 'thread':
+
+            const thread_id = event.target.parentElement.children[0].getAttribute('value');
+            console.log(thread_id);
+            showThread(thread_id).then(response => {
+                
+                document.querySelector('.ui-block').innerHTML = response.html;    
+            })
+
+            break;
+
+        case 'newMessage':
+
+            event.preventDefault();
+        
+            const url = event.target.parentElement.getAttribute('action');
+            const msgData = event.target.parentElement.elements.namedItem('message').value;
+
+            newMessage(url, msgData).then((response) => {
+                
+                showThread(response.thread_id).then(response => {
+                
+                    document.querySelector('.ui-block').innerHTML = response.html;    
+                })
+            })
+
+            break;
+        
         default:
             break;
     }
@@ -396,9 +424,38 @@ async function markNotificationAsRead()
     }
     catch(error) {
         console.log(error.response.data);
+    }
+}
+
+async function showThread(thread_id)
+{
+    try {
+        const response = await axios.get(`http://localhost:8000/messages/inbox/${thread_id}`);
+        return response.data;
+    }
+    catch(error) {
         console.log(error.response.data);
     }
 }
+
+// Posting post-data to the database using Ajax
+async function newMessage(url, msgData) 
+{
+    try {
+         const response = await axios.post(url, {
+            data: {message: msgData}    
+        });
+
+        if(response.status === 200){
+            return response.data;
+        } 
+        
+    } catch (error) {
+        console.log(error.response.data);
+        console.log(error.response.status);
+    }
+}
+
 
 function setReplyHolder(value) {
     replyHolder = value;
@@ -408,4 +465,5 @@ function setReplyHolder(value) {
 function getReplyHolder() {
     return replyHolder;
 }
+
 

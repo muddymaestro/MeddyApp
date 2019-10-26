@@ -42,4 +42,5 @@ Route::get('/markAsRead', function(){
 });
 
 Route::get('/messages', 'MessagesController@index')->name('message.index');
-Route::post('/message/{message_to}', 'MessagesController@store')->name('message.create');
+Route::get('/messages/inbox/{thread_id}', 'MessagesController@show')->name('message.inbox');
+Route::post('/message/{messageTo}', 'MessagesController@store')->name('message.create');
