@@ -46,7 +46,7 @@
 
                             <div class="tab-pane active" id="home-1" role="tabpanel" aria-expanded="true">
 
-                            <form action="{{ route('post.create') }}" method="POST" id="form">
+                            <form action="{{ route('post.create') }}" method="POST" id="form" enctype="multipart/form-data">
                                         @csrf
 
                                     <div class="author-thumb">
@@ -55,6 +55,7 @@
                                     <div class="form-group with-icon label-floating is-empty">
                                         <label class="control-label">Share what you are thinking here...</label>
                                         <textarea name="post" class="form-control" placeholder=""></textarea>
+                                        <input type="file" name="image" id="image">
                                     </div>
                                     <div class="add-options-message">
                                         <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD PHOTOS">
@@ -632,6 +633,10 @@
                                     </div>
                             
                                 </div>
+
+                                @if($post->image)
+                                    <img src="{{asset('storage/pics/'.$post->image)}}" height=500px" width="500px">
+                                @endif
                             
                                 <p id="postBody">{{ $post->body }}</p>
 

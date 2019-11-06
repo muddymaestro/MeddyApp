@@ -33,28 +33,29 @@ document.addEventListener('click', event => {
         case 'status':
 
             event.preventDefault();
-            
-            const postUrl = document.getElementById('form').getAttribute('action');
-            const postData = document.getElementById('form').elements.namedItem('post').value;
 
-            post(postUrl, postData).then(() => {
+            const statusForm = event.target.parentElement.parentElement;
+            const postUrl = statusForm.getAttribute('action');
+            const formData = new FormData(statusForm);
+
+            post(postUrl, formData).then(() => {
 
                 fetchPosts().then(response => {
                 
                 document.querySelector('.px-5').innerHTML = response.html;
-
-                const activityFeed = document.getElementById('widget');
-                const newFeed = document.createElement('LI');
-                const feedItem = `<div class="author-thumb">
-                                        <img src="{{asset('img/avatar52-sm.jpg')}}" alt="author">
-                                    </div>
-                                    <div class="notification-event">
-                                        <a href="#" class="h6 notification-friend">Mohamed Mdoe ${response.feeds[0].type} </a> posted a <a href="#" class="notification-link">status update</a>.
-                                        <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">1 hour ago</time></span>
-                                    </div>
-                                `;
-                newFeed.innerHTML = feedItem;
-                activityFeed.insertBefore(newFeed, activityFeed.children[0]);
+                
+                // const activityFeed = document.getElementById('widget');
+                // const newFeed = document.createElement('LI');
+                // const feedItem = `<div class="author-thumb">
+                //                         <img src="{{asset('img/avatar52-sm.jpg')}}" alt="author">
+                //                     </div>
+                //                     <div class="notification-event">
+                //                         <a href="#" class="h6 notification-friend">Mohamed Mdoe ${response.feeds[0].type} </a> posted a <a href="#" class="notification-link">status update</a>.
+                //                         <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">1 hour ago</time></span>
+                //                     </div>
+                //                 `;
+                // newFeed.innerHTML = feedItem;
+                // activityFeed.insertBefore(newFeed, activityFeed.children[0]);
             });
             /* const parent = document.getElementById('newsfeed-items-grid');
             parent.insertAdjacentHTML('afterbegin', newElement); */
@@ -281,20 +282,19 @@ document.addEventListener('click', event => {
 });
 
 // Posting post-data to the database using Ajax
-async function post(url, postData) 
+async function post(url, formData) 
 {
     try {
-         const response = await axios.post(url, {
-            data: {post: postData}    
-        });
-
-        if(response.status === 200){
-            return true;
-        } 
+         const response = await fetch(url, {
+                method: 'POST',
+                body: formData
+            }
+        );
+        
+        if(response.ok) return true;
         
     } catch (error) {
-        console.log(error.response.data);
-        console.log(error.response.status);
+        console.log(error);
     }
 }
 

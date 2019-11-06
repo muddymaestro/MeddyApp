@@ -22,14 +22,31 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'data.post' => 'required'
+            'post' => 'required',
+            'image' => 'nullable|image'  //formats: jpeg, png, bmp, gif, svg
         ]);
 
         $userId = Auth::user()->id;
-        $userName = Auth::user()->name;
+
         $post = new Post();
         $post->user_id = $userId;
-        $post->body = $request->input('data.post');
+        $post->body = $request->post;
+        
+        $image = $request->file('image');
+      
+        //get just extension.
+        $ext = $image->getClientOriginalExtension();
+
+        //make a unique name
+        $filename = uniqid(). '.' . $ext;
+
+        //upload the image
+        $image->storeAs('public/pics', $filename);
+
+        //delete the previous image.
+        //Storage::delete("public/pics/{$user->image}");
+
+        $post->image = $filename;
 
         $post->save();
 
@@ -51,7 +68,7 @@ class PostController extends Controller
                                 ->where('type', '=', 'created_post')
                                 ->get();
 
-        return response()->json(['html' => view('posts.home', compact(['posts', 'users', ]))->render(), 'feeds' => $feeds]);
+        return response()->json(['html' => view('posts.home', compact(['posts', 'users', 'feeds']))->render()]);
     }
 
     /**
