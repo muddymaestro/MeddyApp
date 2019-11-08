@@ -66,7 +66,17 @@ document.addEventListener('click', event => {
 
             event.preventDefault();
 
-            const commentHolder = event.target.parentElement.parentElement.children[6];
+            let commentHolder;
+            let parentContent = event.target.parentElement.parentElement;
+
+            if(parentContent.children[1].id == 'postImage') {
+
+                commentHolder = parentContent.children[7];
+            }
+            else {
+                commentHolder = parentContent.children[6];
+            }
+
             const commentData = event.target.parentElement.elements.namedItem('comment').value;
             const commentUrl = event.target.parentElement.getAttribute('action');
             
@@ -177,7 +187,16 @@ document.addEventListener('click', event => {
 
                     getLikesCount(post_id).then(response => {
                         
-                        let likeClass = event.target.parentElement.parentElement.children[3].children[0].children[1];
+                        const parent = event.target.parentElement.parentElement;
+                        let likeClass;
+
+                        if(parent.children[1].id == 'postImage') {
+
+                            likeClass = parent.children[4].children[0].children[1];
+                        }
+                        else {
+                            likeClass = parent.children[3].children[0].children[1];
+                        }
                         
                         if(response.likesCount > 1){
                             likeClass.innerHTML = `${response.likesCount} Likes`;
@@ -203,13 +222,22 @@ document.addEventListener('click', event => {
 
                     getLikesCount(post_ID).then(response => {
 
-                        let likeClass = event.target.parentElement.parentElement.children[3].children[0].children[1];
+                        const parent = event.target.parentElement.parentElement;
+                        let likeClass;
+
+                        if(parent.children[1].id == 'postImage') {
+
+                            likeClass = parent.children[4].children[0].children[1];
+                        }
+                        else {
+                            likeClass = parent.children[3].children[0].children[1];
+                        }
                         
                         if(response.likesCount > 1){
                             likeClass.innerHTML = `${response.likesCount} Likes`;
                         }
                         else if(response.likesCount <= 1){
-                                likeClass.innerHTML = `${response.likesCount} Like`;
+                            likeClass.innerHTML = `${response.likesCount} Like`;
                         }
                     });
                 }
@@ -219,9 +247,19 @@ document.addEventListener('click', event => {
         case 'comment':
 
             event.preventDefault();
-    
-            const form = event.target.parentNode.parentNode.children[4];
-            const comment = event.target.parentNode.parentNode.children[6];
+
+            let parent = event.target.parentNode.parentNode;
+            let form = null, comment = null;
+
+            if(parent.children[1].id == 'postImage') {
+
+                form = parent.children[5];
+                comment = parent.children[7];
+            }
+            else {
+                form = parent.children[4];
+                comment = parent.children[6];
+            }
             
             //showing and hiding comment form
             if (form.style.display === "none") {
@@ -290,7 +328,7 @@ async function post(url, formData)
                 body: formData
             }
         );
-        
+
         if(response.ok) return true;
         
     } catch (error) {

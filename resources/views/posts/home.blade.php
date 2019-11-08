@@ -76,68 +76,6 @@
                     
                                 </form>
                             </div>
-                    
-                        <!-- unwanted for now 
-                            <div class="tab-pane" id="profile-1" role="tabpanel" aria-expanded="true">
-                            <form action="" method="">
-                                    <div class="author-thumb">
-                                        <img src="{{asset('public/img/author-page.jpg')}}" alt="author">
-                                    </div>
-                                    <div class="form-group with-icon label-floating is-empty">
-                                        <label class="control-label">Share what you are thinking here...</label>
-                                        <textarea class="form-control" placeholder=""  ></textarea>
-                                    </div>
-                                    <div class="add-options-message">
-                                        <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD PHOTOS">
-                                            <svg class="olymp-camera-icon" data-toggle="modal" data-target="#update-header-photo"><use xlink:href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use></svg>
-                                        </a>
-                                        <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="TAG YOUR FRIENDS">
-                                            <svg class="olymp-computer-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
-                                        </a>
-                    
-                                        <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD LOCATION">
-                                            <svg class="olymp-small-pin-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-small-pin-icon"></use></svg>
-                                        </a>
-                    
-                                        <button class="btn btn-primary btn-md-2">Post Status</button>
-                                        <button   class="btn btn-md-2 btn-border-think btn-transparent c-grey">Preview</button>
-                    
-                                    </div>
-                    
-                                </form>
-                            </div>
-                        -->
-
-                        <!-- unwanted for now
-                            <div class="tab-pane" id="blog" role="tabpanel" aria-expanded="true">
-                                <form>
-                                    <div class="author-thumb">
-                                        <img src="{{asset('public/img/author-page.jpg')}}" alt="author">
-                                    </div>
-                                    <div class="form-group with-icon label-floating is-empty">
-                                        <label class="control-label">Share what you are thinking here...</label>
-                                        <textarea class="form-control" placeholder=""  ></textarea>
-                                    </div>
-                                    <div class="add-options-message">
-                                        <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD PHOTOS">
-                                            <svg class="olymp-camera-icon" data-toggle="modal" data-target="#update-header-photo"><use xlink:href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use></svg>
-                                        </a>
-                                        <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="TAG YOUR FRIENDS">
-                                            <svg class="olymp-computer-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
-                                        </a>
-                    
-                                        <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD LOCATION">
-                                            <svg class="olymp-small-pin-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-small-pin-icon"></use></svg>
-                                        </a>
-                    
-                                        <button class="btn btn-primary btn-md-2">Post Status</button>
-                                        <button   class="btn btn-md-2 btn-border-think btn-transparent c-grey">Preview</button>
-                    
-                                    </div>
-                    
-                                </form>
-                            </div>
-                        -->
                         </div>
                     </div>   
                     <!-- ... end News Feed Form  -->			
@@ -635,7 +573,7 @@
                                 </div>
 
                                 @if($post->image)
-                                    <img src="{{asset('storage/pics/'.$post->image)}}" height=500px" width="500px">
+                                    <img src="{{asset('storage/pics/'.$post->image)}}" height=500px" width="500px" id="postImage">
                                 @endif
                             
                                 <p id="postBody">{{ $post->body }}</p>
@@ -977,7 +915,7 @@
                                     </div>
                                     <div class="notification-event">
                                         <a href="#" class="h6 notification-friend">Marina Polson</a> commented on Jason Mark’s <a href="#" class="notification-link">photo.</a>.
-                                        <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">2 mins ago</time></span>
+                                        <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">{{$feed->created_at}}</time></span>
                                     </div>
                                 </li>
 
@@ -988,7 +926,7 @@
                                     </div>
                                     <div class="notification-event">
                                         <a href="#" class="h6 notification-friend">Jake Parker </a> liked Nicholas Grissom’s <a href="#" class="notification-link">status update.</a>.
-                                        <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">5 mins ago</time></span>
+                                        <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">{{$feed->created_at}}</time></span>
                                     </div>
                                 </li>
 
@@ -999,7 +937,7 @@
                                     </div>
                                     <div class="notification-event">
                                         <a href="#" class="h6 notification-friend">Jake Parker </a> posted a status update <a href="#" class="notification-link">status update.</a>.
-                                        <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">5 mins ago</time></span>
+                                        <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">{{$feed->created_at}}</time></span>
                                     </div>
                                 </li>
                             @endif
